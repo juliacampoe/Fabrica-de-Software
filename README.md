@@ -103,11 +103,3 @@ git push
 ## 👥 Equipe
 
 Projeto desenvolvido por estudantes de Ciência da Computação.
-
-
-
-Se quiser, posso melhorar ainda mais e deixar nível **“projeto de portfólio profissional”** com:
-- banner no topo
-- imagens do jogo
-- layout estilo README de jogo indie real 👍
-```
