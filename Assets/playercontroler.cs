@@ -1,12 +1,13 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class playercontroler : MonoBehaviour
 {
-    [SerializeField] private float movementSpeed = 20f;
+    [SerializeField] private float movementSpeed = 5f;
     [SerializeField] private float jumpForce = 10f;
 
     private Rigidbody2D rb;
-    private Vector2 movementDirection;
+    private float movementInput;
     private bool isGrounded;
 
     void Start()
@@ -16,25 +17,39 @@ public class playercontroler : MonoBehaviour
 
     void Update()
     {
-        movementDirection = new Vector2(
-            (Input.GetKey(KeyCode.D) ? 1 : 0) + (Input.GetKey(KeyCode.A) ? -1 : 0),
-    0
-);
+        // Movimento
+        movementInput = 0;
 
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Keyboard.current.aKey.isPressed)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            movementInput = -1;
+        }
+
+        if (Keyboard.current.dKey.isPressed)
+        {
+            movementInput = 1;
+        }
+
+        // Pulo
+        if (Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded)
+        {
+            rb.linearVelocity = new Vector2(
+                rb.linearVelocity.x,
+                jumpForce
+            );
+
             isGrounded = false;
         }
     }
 
     void FixedUpdate()
-{
-    rb.linearVelocity = new Vector2(
-        movementDirection.x * movementSpeed,
-        rb.linearVelocity.y
-    );
-}
+    {
+        rb.linearVelocity = new Vector2(
+            movementInput * movementSpeed,
+            rb.linearVelocity.y
+        );
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
