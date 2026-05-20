@@ -486,7 +486,7 @@ Transform:
   m_GameObject: {fileID: 1682117046}
   serializedVersion: 2
   m_LocalRotation: {x: -0.55576426, y: -0, z: -0, w: 0.83134}
-  m_LocalPosition: {x: -1.7750292, y: -1.72, z: 4.74}
+  m_LocalPosition: {x: -14.53, y: -1.72, z: 4.74}
   m_LocalScale: {x: 0.5826015, y: 1.564137, z: 0.824982}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -715,7 +715,7 @@ Transform:
   m_GameObject: {fileID: 1889103093}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5475632, y: 0, z: 0, w: 0.83676434}
-  m_LocalPosition: {x: 11.85, y: 2.8179, z: -7.3479}
+  m_LocalPosition: {x: -0.90497017, y: 2.8179, z: -7.3479}
   m_LocalScale: {x: 0.62, y: 0.9344, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -734,6 +734,7 @@ GameObject:
   - component: {fileID: 1937380436}
   - component: {fileID: 1937380432}
   - component: {fileID: 1937380431}
+  - component: {fileID: 1937380438}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -791,7 +792,7 @@ Transform:
   m_GameObject: {fileID: 1937380430}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.03, y: 0.8, z: 0}
+  m_LocalPosition: {x: -21.78497, y: 0.8, z: 0}
   m_LocalScale: {x: 0.9242, y: 1.0623524, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -893,6 +894,19 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1937380438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937380430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98431f5f3e6916f48a252b58c106b82d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  maxHealth: 100
 --- !u!1 &1981433588
 GameObject:
   m_ObjectHideFlags: 0

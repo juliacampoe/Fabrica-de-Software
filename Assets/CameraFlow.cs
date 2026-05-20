@@ -2,13 +2,19 @@ using UnityEngine;
 
 public class CameraFlow : MonoBehaviour
 {
-    public Transform  player; 
+    public Transform player;
+
     void Update()
     {
+        if (player == null)
+        {
+            return;
+        }
+
         transform.position = new Vector3(
             player.position.x,
             player.position.y,
-            -10f
+            -10
         );
     }
 }
