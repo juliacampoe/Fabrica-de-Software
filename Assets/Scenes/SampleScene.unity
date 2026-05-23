@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 144909584}
   - component: {fileID: 144909589}
   - component: {fileID: 144909590}
+  - component: {fileID: 144909591}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -313,6 +314,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.19, y: 2.16}
   m_EdgeRadius: 0
+--- !u!114 &144909591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 144909583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0952fa2e3573f314db6f4c8860380a00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDamage
+  damage: 10
 --- !u!1 &293938079
 GameObject:
   m_ObjectHideFlags: 0
@@ -1658,6 +1672,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 7635041428801483851, guid: bf216a04f812e264e9cb2affd73b2a29, type: 3}
   firePoint: {fileID: 1130340737}
   bulletSpeed: 10
+  maxAmmo: 10
+  reloadTime: 2
 --- !u!1 &1981433588
 GameObject:
   m_ObjectHideFlags: 0
