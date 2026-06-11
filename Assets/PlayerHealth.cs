@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -9,16 +10,6 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-
-        Debug.Log("Vida: " + currentHealth);
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            TakeDamage(10);
-        }
     }
 
     public void TakeDamage(int damage)
@@ -35,7 +26,6 @@ public class PlayerHealth : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("Zarek morreu");
-        Destroy(gameObject);
+        SceneManager.LoadScene("GameOver");
     }
 }
