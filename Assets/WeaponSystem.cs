@@ -1,46 +1,72 @@
 using System.Collections;
 using UnityEngine;
 
-public class WeaponSystem : MonoBehaviour
+public class WeaponSystem
+    : MonoBehaviour
 {
-    [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private Transform firePoint;
-    [SerializeField] private float bulletSpeed = 10f;
+    [SerializeField]
+    private GameObject bulletPrefab;
+
+    [SerializeField]
+    private Transform firePoint;
+
+    [SerializeField]
+    private float bulletSpeed = 10f;
 
     [Header("Ammo")]
-    [SerializeField] private int maxAmmo = 10;
-    [SerializeField] private float reloadTime = 2f;
+    [SerializeField]
+    private int maxAmmo = 10;
+
+    [SerializeField]
+    private float reloadTime = 2f;
 
     private int currentAmmo;
     private bool isReloading;
     private bool facingRight = true;
 
+    private playercontroler
+        playerController;
+
     void Start()
     {
         currentAmmo = maxAmmo;
+
+        playerController =
+            GetComponent
+            <playercontroler>();
     }
 
     void Update()
     {
-        // Direção do player
-        float moveInput = Input.GetAxisRaw("Horizontal");
+        float moveInput =
+            Input.GetAxisRaw(
+                "Horizontal"
+            );
 
         if (moveInput > 0)
             facingRight = true;
         else if (moveInput < 0)
             facingRight = false;
 
-        // Recarregar
-        if (Input.GetKeyDown(KeyCode.R)
+        // RELOAD
+        if (Input.GetKeyDown(
+            KeyCode.R)
             && !isReloading
-            && currentAmmo < maxAmmo)
+            && currentAmmo
+            < maxAmmo)
         {
-            StartCoroutine(Reload());
+            StartCoroutine(
+                Reload()
+            );
         }
 
-        // Atirar
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        // TIRO
+        if (Input.GetKeyDown(
+            KeyCode.Alpha1))
         {
+            playerController
+                .PlayAttackAnimation();
+
             Shoot();
         }
     }
@@ -48,48 +74,49 @@ public class WeaponSystem : MonoBehaviour
     void Shoot()
     {
         if (isReloading)
-        {
-            Debug.Log("Recarregando...");
             return;
-        }
 
         if (currentAmmo <= 0)
-        {
-            Debug.Log("Sem munição! Aperte R");
             return;
-        }
 
         currentAmmo--;
 
-        GameObject bullet = Instantiate(
-            bulletPrefab,
-            firePoint.position,
-            Quaternion.identity
-        );
+        GameObject bullet =
+            Instantiate(
+                bulletPrefab,
+                firePoint.position,
+                Quaternion.identity
+            );
 
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        Rigidbody2D rb =
+            bullet.GetComponent
+            <Rigidbody2D>();
 
-        float direction = facingRight ? 1f : -1f;
+        float direction =
+            facingRight
+            ? 1f
+            : -1f;
 
-        rb.linearVelocity = new Vector2(
-            direction * bulletSpeed,
-            0
-        );
-
-        Debug.Log("Munição restante: " + currentAmmo);
+        rb.linearVelocity =
+            new Vector2(
+                direction
+                * bulletSpeed,
+                0
+            );
     }
 
     IEnumerator Reload()
     {
         isReloading = true;
 
-        Debug.Log("Recarregando...");
+        yield return
+            new WaitForSeconds(
+                reloadTime
+            );
 
-        yield return new WaitForSeconds(reloadTime);
+        currentAmmo =
+            maxAmmo;
 
-        currentAmmo = maxAmmo;
         isReloading = false;
-
-        Debug.Log("Recarga concluída!");
     }
 }
