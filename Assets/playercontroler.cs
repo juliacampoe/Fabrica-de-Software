@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class playercontroler : MonoBehaviour
 {
@@ -7,31 +6,53 @@ public class playercontroler : MonoBehaviour
     [SerializeField] private float jumpForce = 10f;
 
     private Rigidbody2D rb;
+    private Animator animator;
+
     private float movementInput;
     private bool isGrounded;
+    private bool facingRight = true;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        // Movimento
-        movementInput = 0;
+        // Movimento horizontal
+        movementInput = Input.GetAxisRaw("Horizontal");
 
-        if (Keyboard.current.aKey.isPressed)
+        // DIREITA
+        if (movementInput > 0)
         {
-            movementInput = -1;
+            facingRight = true;
+            animator.Play("player walk right");
         }
 
-        if (Keyboard.current.dKey.isPressed)
+        // ESQUERDA
+        else if (movementInput < 0)
         {
-            movementInput = 1;
+            facingRight = false;
+            animator.Play("player walk left");
         }
 
-        // Pulo
-        if (Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded)
+        // IDLE
+        else
+        {
+            if (facingRight)
+            {
+                animator.Play("player idle right");
+            }
+            else
+            {
+                animator.Play("player idle left");
+            }
+        }
+
+        // PULO
+        if (Input.GetKeyDown(KeyCode.Space)
+            && isGrounded)
         {
             rb.linearVelocity = new Vector2(
                 rb.linearVelocity.x,
@@ -55,6 +76,42 @@ public class playercontroler : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+        }
+    }
+
+    public void PlayAttackAnimation()
+    {
+        if (facingRight)
+        {
+            animator.Play("player right attack");
+        }
+        else
+        {
+            animator.Play("player left attack");
+        }
+    }
+
+    public void PlayHurtAnimation()
+    {
+        if (facingRight)
+        {
+            animator.Play("player hurt right");
+        }
+        else
+        {
+            animator.Play("player hurt left");
+        }
+    }
+
+    public void PlayDeathAnimation()
+    {
+        if (facingRight)
+        {
+            animator.Play("player death right");
+        }
+        else
+        {
+            animator.Play("player death left");
         }
     }
 }
