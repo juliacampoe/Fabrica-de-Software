@@ -7,7 +7,7 @@ public class ReturnToMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.M))
         {
-            Debug.Log("Voltando pro Menu");
+            Debug.Log("Voltando pro menu");
             SceneManager.LoadScene("MainMenu");
         }
     }
