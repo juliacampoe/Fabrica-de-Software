@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 00b50cd499a8a514b9e3a3755faaa5d4
+guid: 7fb62e590aa9d824a838f03208cbfb74
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4051019686268947174
-    second: WhatsApp Image 2026-05-14 at 21.36.13_0
+      213: 6015724916546061582
+    second: WhatsApp Image 2026-05-15 at 17.04.37_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -87,7 +87,7 @@ TextureImporter:
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 12
+    textureFormat: 29
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WhatsApp Image 2026-05-14 at 21.36.13_0
+      name: WhatsApp Image 2026-05-15 at 17.04.37_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1536
-        height: 1024
+        width: 1600
+        height: 692
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a1533ddfe03e7c7c0800000000000000
-      internalID: -4051019686268947174
+      spriteID: e05c13d50f52c7350800000000000000
+      internalID: 6015724916546061582
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      WhatsApp Image 2026-05-14 at 21.36.13_0: -4051019686268947174
+      WhatsApp Image 2026-05-15 at 17.04.37_0: 6015724916546061582
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

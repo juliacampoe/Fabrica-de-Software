@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f0f2411f6f672d2419c8274bba2aa494
+guid: 5d1a04f0659f38644a710a3e86a08358
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5136106247753594955
-    second: WhatsApp Image 2026-05-20 at 14.40.14_0
+      213: 3889735184821449522
+    second: WhatsApp Image 2026-05-20 at 12.36.21_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -87,12 +87,25 @@ TextureImporter:
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 10
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 1
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -100,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WhatsApp Image 2026-05-20 at 14.40.14_0
+      name: WhatsApp Image 2026-05-20 at 12.36.21_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b48740a8b6d174740800000000000000
-      internalID: 5136106247753594955
+      spriteID: 233fe99ba8d1bf530800000000000000
+      internalID: 3889735184821449522
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      WhatsApp Image 2026-05-20 at 14.40.14_0: 5136106247753594955
+      WhatsApp Image 2026-05-20 at 12.36.21_0: 3889735184821449522
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

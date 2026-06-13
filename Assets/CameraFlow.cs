@@ -5,27 +5,19 @@ public class CameraFlow : MonoBehaviour
     public Transform player;
 
     [SerializeField] private float minX = 0f;
-    [SerializeField] private float maxX = 100f;
-
+    [SerializeField] private float maxX = 50f;
     [SerializeField] private float fixedY = 0f;
 
-    void Update()
+    void LateUpdate()
     {
-        if (player == null)
-        {
-            return;
-        }
+        if (player == null) return;
 
-        float cameraX = Mathf.Clamp(
-            player.position.x,
-            minX,
-            maxX
-        );
+        float targetX = Mathf.Clamp(player.position.x, minX, maxX);
 
         transform.position = new Vector3(
-            cameraX,
+            targetX,
             fixedY,
-            -10
+            -10f
         );
     }
 }
