@@ -19,6 +19,12 @@ public class Portal : MonoBehaviour
                 StartCoroutine(EnterPortal());
             }
         }
+
+        // VOLTAR AO MENU
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 
     System.Collections.IEnumerator EnterPortal()
@@ -36,17 +42,18 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Player")) return;
-
-        playerNear = true;
-
-        Debug.Log("Player no portal");
+        if (other.CompareTag("Player"))
+        {
+            playerNear = true;
+            Debug.Log("Player no portal");
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (!other.CompareTag("Player")) return;
-
-        playerNear = false;
+        if (other.CompareTag("Player"))
+        {
+            playerNear = false;
+        }
     }
 }

@@ -4,20 +4,20 @@ public class CameraFlow : MonoBehaviour
 {
     public Transform player;
 
-    [SerializeField] private float minX = 0f;
-    [SerializeField] private float maxX = 50f;
+    [SerializeField] private float minX = -8.54f;
+    [SerializeField] private float maxX = 213.76f;
     [SerializeField] private float fixedY = 0f;
 
     void LateUpdate()
     {
-        if (player == null) return;
+        if (player == null)
+        {
+            Debug.Log("PLAYER NÃO ATRIBUÍDO NA CÂMERA");
+            return;
+        }
 
-        float targetX = Mathf.Clamp(player.position.x, minX, maxX);
+        float x = Mathf.Clamp(player.position.x, minX, maxX);
 
-        transform.position = new Vector3(
-            targetX,
-            fixedY,
-            -10f
-        );
+        transform.position = new Vector3(x, fixedY, -10f);
     }
 }
