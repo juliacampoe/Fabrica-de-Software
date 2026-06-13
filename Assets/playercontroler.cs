@@ -95,7 +95,6 @@ public class playercontroler : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
-            Debug.Log("TOCOU NO CHÃO ✔");
         }
     }
 

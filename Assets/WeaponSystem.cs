@@ -34,6 +34,8 @@ public class WeaponSystem
         playerController =
             GetComponent
             <playercontroler>();
+
+        Debug.Log("WEAPON SYSTEM INICIADO ✔");
     }
 
     void Update()
@@ -55,6 +57,8 @@ public class WeaponSystem
             && currentAmmo
             < maxAmmo)
         {
+            Debug.Log("TECLA R PRESSIONADA → RECARREGANDO");
+
             StartCoroutine(
                 Reload()
             );
@@ -64,6 +68,8 @@ public class WeaponSystem
         if (Input.GetKeyDown(
             KeyCode.Alpha1))
         {
+            Debug.Log("TIRO DISPARADO | Ammo: " + currentAmmo);
+
             playerController
                 .PlayAttackAnimation();
 
@@ -74,10 +80,16 @@ public class WeaponSystem
     void Shoot()
     {
         if (isReloading)
+        {
+            Debug.Log("TENTOU ATIRAR MAS ESTÁ RECARREGANDO");
             return;
+        }
 
         if (currentAmmo <= 0)
+        {
+            Debug.Log("SEM MUNIÇÃO!");
             return;
+        }
 
         currentAmmo--;
 
@@ -103,11 +115,15 @@ public class WeaponSystem
                 * bulletSpeed,
                 0
             );
+
+        Debug.Log("TIRO OK | Ammo restante: " + currentAmmo);
     }
 
     IEnumerator Reload()
     {
         isReloading = true;
+
+        Debug.Log("RECARREGANDO...");
 
         yield return
             new WaitForSeconds(
@@ -118,5 +134,7 @@ public class WeaponSystem
             maxAmmo;
 
         isReloading = false;
+
+        Debug.Log("RECARREGADO COM SUCESSO ✔ Ammo: " + currentAmmo);
     }
 }
