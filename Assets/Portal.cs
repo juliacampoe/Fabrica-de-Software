@@ -1,38 +1,52 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Portal : MonoBehaviour
 {
-    private bool showText = false;
+    [SerializeField] private Animator animator;
 
-    void OnTriggerEnter2D(Collider2D other)
+    private bool playerNear;
+    private bool transitioning;
+
+    void Update()
     {
-        if (other.CompareTag("Player"))
+        if (playerNear && !transitioning)
         {
-            showText = true;
+            animator.Play("portal animation");
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                StartCoroutine(EnterPortal());
+            }
         }
     }
 
-    void OnTriggerExit2D(Collider2D other)
+    System.Collections.IEnumerator EnterPortal()
     {
-        if (other.CompareTag("Player"))
-        {
-            showText = false;
-        }
+        transitioning = true;
+
+        Debug.Log("Entrando no portal...");
+
+        animator.Play("portal animation");
+
+        yield return new WaitForSeconds(1f);
+
+        SceneManager.LoadScene("FASE 2");
     }
 
-    void OnGUI()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (showText)
-        {
-            GUI.Box(
-                new Rect(
-                    Screen.width / 2 - 100,
-                    50,
-                    200,
-                    40
-                ),
-                "Fase 2 em breve 🚧"
-            );
-        }
+        if (!other.CompareTag("Player")) return;
+
+        playerNear = true;
+
+        Debug.Log("Player no portal");
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (!other.CompareTag("Player")) return;
+
+        playerNear = false;
     }
 }

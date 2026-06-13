@@ -7,7 +7,7 @@ public class GameOverManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("FASE 1");
         }
     }
 }
