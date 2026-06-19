@@ -4,9 +4,9 @@
 
 ## 📌 Sobre o Projeto
 
-Este projeto é um jogo 2D de plataforma inspirado em jogos como *Super Mario Bros*, com foco educativo na área de tecnologia.
+Este projeto é um jogo 2D de plataforma inspirado em jogos como *Super Mario Bros*, com foco em diversão na área de tecnologia.
 
-O jogador deve avançar por fases, responder perguntas, enfrentar inimigos e coletar moedas para evoluir suas habilidades.
+O jogador deve avançar por fases e enfrentar inimigos.
 
 O objetivo final é derrotar o chefe **PYRON**.
 
@@ -14,38 +14,17 @@ O objetivo final é derrotar o chefe **PYRON**.
 
 ## 🎯 Objetivo do Jogo
 
-- Ensinar tecnologia de forma interativa
-- Estimular raciocínio através de perguntas
 - Criar progressão de dificuldade por fases
-- Incentivar estratégia com uso de moedas e habilidades
 
 ---
 
 ## 🕹️ Mecânicas Principais
-
-### 💰 Sistema de Moedas
-- Ganhas ao responder perguntas corretamente
-- Usadas para comprar habilidades
-
-### ❓ Perguntas
-- Servem para ganhar moedas
-- Também funcionam como desafios de progressão
 
 ### ⚔️ Combate
 - Inimigo 1: dano leve (perde moedas)
 - Inimigo 2: dano alto (perde vida)
 - Chefão: batalha final
 
-### 🔫 Habilidades
-- Tiro básico
-- Tiro forte
-- Super habilidade: **Aniquilação**
-  - Custo: 20+ moedas
-  - Efeito: elimina inimigos ou pula desafios
-
-### 🛡️ Mecânicas especiais
-- Escudo disponível apenas no chefão
-- Ponto de recarga aparece ocasionalmente (responder perguntas de urgência)
 
 ---
 
@@ -87,7 +66,7 @@ git push
 * Unity (C#)
 * Git & GitHub
 * Pixel Art 2D
-* Sistema de perguntas interativas
+* VSCode
 
 ---
 
